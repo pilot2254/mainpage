@@ -1,72 +1,53 @@
-// Skills page specific functionality
+// Skills page JavaScript
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Initialize skills
-  const skillsContainer = document.querySelector('.grid');
-  if (skillsContainer) {
-    initializeSkills(skillsContainer);
-  }
-  
-  // Create rain effect
-  const rainContainer = document.getElementById('rain-container');
-  if (rainContainer) {
-    // Rain is already created in main.js
-  }
+document.addEventListener('DOMContentLoaded', function() {
+    // Skills data
+    const skills = [
+        // Technology skills
+        { name: 'HTML', icon: 'fab fa-html5', category: 'technology' },
+        { name: 'CSS', icon: 'fab fa-css3-alt', category: 'technology' },
+        { name: 'Proxmox', icon: 'fas fa-server', category: 'technology' },
+        { name: 'ESXI', icon: 'fas fa-network-wired', category: 'technology' },
+        { name: 'Blender', icon: 'fas fa-cube', category: 'technology' },
+        { name: 'Networking', icon: 'fas fa-network-wired', category: 'technology' },
+        { name: 'Web Design', icon: 'fas fa-paint-brush', category: 'technology' },
+        
+        // Professional skills
+        { name: 'Electrician', icon: 'fas fa-bolt', category: 'professional' },
+        { name: 'PC Assembly', icon: 'fas fa-desktop', category: 'professional' },
+        { name: 'Driving', icon: 'fas fa-car', category: 'professional' },
+        
+        // Hobbies
+        { name: 'Music', icon: 'fas fa-headphones', category: 'hobbies' },
+        { name: 'Gaming', icon: 'fas fa-gamepad', category: 'hobbies' },
+        { name: 'Music Curation', icon: 'fas fa-music', category: 'hobbies' },
+        { name: 'Music Transitions', icon: 'fas fa-sliders-h', category: 'hobbies' },
+        { name: 'FL Studio Videos', icon: 'fas fa-video', category: 'hobbies' },
+        { name: 'Airsoft', icon: 'fas fa-crosshairs', category: 'hobbies' }
+    ];
+
+    // Get the skill container elements
+    const skillContainers = document.querySelectorAll('.max-w-6xl > div');
+    
+    // Render skills by category
+    skills.forEach(skill => {
+        const skillCard = document.createElement('div');
+        skillCard.className = 'bg-zinc-800 p-6 rounded-lg text-center hover:bg-zinc-700 transition-colors';
+        
+        skillCard.innerHTML = `
+            <div class="text-3xl mb-3 text-emerald-400">
+                <i class="${skill.icon}"></i>
+            </div>
+            <h3 class="font-medium text-white">${skill.name}</h3>
+        `;
+        
+        // Add to appropriate container
+        if (skill.category === 'technology' && skillContainers[0]) {
+            skillContainers[0].querySelector('.grid').appendChild(skillCard);
+        } else if (skill.category === 'professional' && skillContainers[1]) {
+            skillContainers[1].querySelector('.grid').appendChild(skillCard);
+        } else if (skill.category === 'hobbies' && skillContainers[2]) {
+            skillContainers[2].querySelector('.grid').appendChild(skillCard);
+        }
+    });
 });
-
-// Initialize skills
-function initializeSkills(container) {
-  const skills = [
-    { name: 'Driving', icon: 'fa-car', category: 'Personal' },
-    { name: 'HTML', icon: 'fa-html5', category: 'Technology' },
-    { name: 'CSS', icon: 'fa-css3-alt', category: 'Technology' },
-    { name: 'Proxmox', icon: 'fa-server', category: 'Technology' },
-    { name: 'ESXI', icon: 'fa-network-wired', category: 'Technology' },
-    { name: 'Listening Music', icon: 'fa-headphones', category: 'Hobby' },
-    { name: 'Gaming', icon: 'fa-gamepad', category: 'Hobby' },
-    { name: 'Blender', icon: 'fa-cube', category: 'Technology' },
-    { name: 'Networking', icon: 'fa-network-wired', category: 'Technology' },
-    { name: 'Assembling PCs', icon: 'fa-desktop', category: 'Technology' },
-    { name: 'Curating Music', icon: 'fa-music', category: 'Hobby' },
-    { name: 'Music Transitions', icon: 'fa-sliders-h', category: 'Hobby' },
-    { name: 'Electrician', icon: 'fa-bolt', category: 'Professional' },
-    { name: 'FL Studio Videos', icon: 'fa-video', category: 'Hobby' },
-    { name: 'Web Design', icon: 'fa-paint-brush', category: 'Technology' },
-    { name: 'Airsoft', icon: 'fa-crosshairs', category: 'Hobby' }
-  ];
-
-  // Create skill cards with staggered animation
-  skills.forEach((skill, index) => {
-    const skillCard = document.createElement('div');
-    skillCard.className = 'skill-card bg-zinc-900/50 border border-zinc-800 rounded-lg p-6 hover:bg-zinc-800/50 transition-all duration-300';
-    skillCard.style.animationDelay = `${index * 0.1}s`;
-    
-    // Get category color
-    let categoryColor;
-    switch(skill.category) {
-      case 'Technology':
-        categoryColor = 'text-emerald-400';
-        break;
-      case 'Hobby':
-        categoryColor = 'text-amber-400';
-        break;
-      case 'Professional':
-        categoryColor = 'text-sky-400';
-        break;
-      default:
-        categoryColor = 'text-purple-400';
-    }
-    
-    skillCard.innerHTML = `
-      <div class="flex flex-col items-center text-center">
-        <div class="text-4xl mb-4 text-silver-400">
-          <i class="fas ${skill.icon}"></i>
-        </div>
-        <h3 class="text-xl font-semibold text-silver-400 mb-2">${skill.name}</h3>
-        <span class="text-sm ${categoryColor}">${skill.category}</span>
-      </div>
-    `;
-    
-    container.appendChild(skillCard);
-  });
-}

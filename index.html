@@ -3,115 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SilverSniper | Home</title>
+    <title>SilverSniper | Developer Portfolio</title>
     
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    
-    <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;700&family=Geist+Sans:wght@300;400;500;700&display=swap">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+    <link rel="icon" href="/favicon.ico">
     
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'geist-sans': ['Geist Sans', 'sans-serif'],
-                        'geist-mono': ['Geist Mono', 'monospace'],
-                    },
-                    colors: {
-                        silver: {
-                            '50': '#f8f9fa',
-                            '100': '#f1f3f5',
-                            '200': '#e9ecef',
-                            '300': '#dee2e6',
-                            '400': '#ced4da',
-                            '500': '#adb5bd',
-                            '600': '#868e96',
-                            '700': '#495057',
-                            '800': '#343a40',
-                            '900': '#212529',
-                        },
-                        zinc: {
-                            '50': '#fafafa',
-                            '100': '#f4f4f5',
-                            '200': '#e4e4e7',
-                            '300': '#d4d4d8',
-                            '400': '#a1a1aa',
-                            '500': '#71717a',
-                            '600': '#52525b',
-                            '700': '#3f3f46',
-                            '800': '#27272a',
-                            '900': '#18181b',
-                            '950': '#09090b',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/assets/css/custom.css">
     
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/76661d0faf.js" crossorigin="anonymous"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    
+    <!-- Include System -->
+    <script src="/assets/js/includes.js"></script>
 </head>
-<body class="bg-black text-white font-geist-sans min-h-screen flex flex-col">
-    <!-- Rain Container -->
-    <div id="rain-container" class="fixed inset-0 pointer-events-none z-0 overflow-hidden"></div>
-    
-    <!-- Header -->
-    <header class="relative z-10">
-        <nav class="container mx-auto px-4 py-6">
-            <div class="flex justify-end md:justify-end items-center">
-                <ul class="flex flex-wrap justify-center md:justify-end gap-4 md:gap-8 items-center">
-                    <li class="nav-item">
-                        <a href="/index.html" class="text-white hover:text-silver-400 text-lg md:text-xl font-medium relative nav-link active">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/pages/projects/index.html" class="text-white hover:text-silver-400 text-lg md:text-xl font-medium relative nav-link">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/pages/skills/index.html" class="text-white hover:text-silver-400 text-lg md:text-xl font-medium relative nav-link">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/pages/bio/index.html" class="text-white hover:text-silver-400 text-lg md:text-xl font-medium relative nav-link">Bio</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-    
-    <!-- Main Content -->
-    <main class="flex-grow container mx-auto px-4 py-8 relative z-10">
-        <div class="flex flex-col items-center justify-center h-[50vh]">
-            <div class="relative">
-                <h1 class="text-4xl md:text-6xl font-bold text-silver-400 text-center mb-8 main-title">
-                    I AM <br> SilverSniper
+<body class="bg-zinc-950 text-zinc-100 font-sans antialiased">
+    <!-- Header (loaded via include) -->
+    <div data-include="/includes/header.html"></div>
+
+    <!-- Hero Section -->
+    <section class="py-20 md:py-32">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    <span class="text-white">Hi, I'm </span>
+                    <span class="text-emerald-400">SilverSniper</span>
                 </h1>
+                <p class="text-xl md:text-2xl text-zinc-400 mb-8">Developer & Technology Enthusiast</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="/pages/projects/" class="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-md transition-colors">
+                        View Projects
+                    </a>
+                    <a href="/pages/bio/" class="px-6 py-3 bg-zinc-800 hover:bg-zinc-700 text-white rounded-md transition-colors">
+                        About Me
+                    </a>
+                </div>
             </div>
         </div>
-        
-        <!-- Terminal Container -->
-        <div class="mt-8 md:mt-16 max-w-3xl mx-auto">
-            <div id="typing-container" class="font-geist-mono text-sm md:text-base text-silver-300 whitespace-pre-line leading-relaxed p-4 border border-zinc-800 rounded-md bg-zinc-900/30 overflow-hidden"></div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section class="py-16 bg-zinc-900">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex justify-between items-center mb-12">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white">Featured Projects</h2>
+                    <a href="/pages/projects/" class="text-emerald-400 hover:text-emerald-300 transition-colors">
+                        View All <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <div class="bg-zinc-800 rounded-lg overflow-hidden hover:translate-y-[-4px] transition-transform">
+                        <div class="h-48 bg-zinc-700 flex items-center justify-center">
+                            <i class="fas fa-laptop-code text-5xl text-zinc-500"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white mb-2">Main Page V4</h3>
+                            <p class="text-zinc-400 mb-4">A responsive landing page with modern design elements.</p>
+                            <a href="https://v3-main-page.netlify.app/" target="_blank" class="text-emerald-400 hover:text-emerald-300 transition-colors">
+                                View Project <i class="fas fa-external-link-alt ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="bg-zinc-800 rounded-lg overflow-hidden hover:translate-y-[-4px] transition-transform">
+                        <div class="h-48 bg-zinc-700 flex items-center justify-center">
+                            <i class="fas fa-code text-5xl text-zinc-500"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white mb-2">Page 8 Redesign</h3>
+                            <p class="text-zinc-400 mb-4">A modern web application with clean UI and smooth interactions.</p>
+                            <a href="https://sebys-page-8-reworked.netlify.app/" target="_blank" class="text-emerald-400 hover:text-emerald-300 transition-colors">
+                                View Project <i class="fas fa-external-link-alt ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3 -->
+                    <div class="bg-zinc-800 rounded-lg overflow-hidden hover:translate-y-[-4px] transition-transform">
+                        <div class="h-48 bg-zinc-700 flex items-center justify-center">
+                            <i class="fas fa-paint-brush text-5xl text-zinc-500"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white mb-2">Assets Page</h3>
+                            <p class="text-zinc-400 mb-4">A collection of design assets and resources for developers.</p>
+                            <a href="https://sebys-page-10-assets-page.netlify.app/" target="_blank" class="text-emerald-400 hover:text-emerald-300 transition-colors">
+                                View Project <i class="fas fa-external-link-alt ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </main>
-    
-    <!-- Footer -->
-    <footer class="relative z-10 py-4 px-4">
-        <div class="container mx-auto">
-            <p class="text-silver-400 text-sm text-right">© SilverSniper | 2021-2025</p>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex justify-between items-center mb-12">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white">Skills & Expertise</h2>
+                    <a href="/pages/skills/" class="text-emerald-400 hover:text-emerald-300 transition-colors">
+                        View All <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <!-- Skill 1 -->
+                    <div class="bg-zinc-800 p-6 rounded-lg text-center hover:bg-zinc-700 transition-colors">
+                        <div class="text-3xl mb-3 text-emerald-400">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <h3 class="font-medium text-white">HTML</h3>
+                    </div>
+                    
+                    <!-- Skill 2 -->
+                    <div class="bg-zinc-800 p-6 rounded-lg text-center hover:bg-zinc-700 transition-colors">
+                        <div class="text-3xl mb-3 text-emerald-400">
+                            <i class="fab fa-css3-alt"></i>
+                        </div>
+                        <h3 class="font-medium text-white">CSS</h3>
+                    </div>
+                    
+                    <!-- Skill 3 -->
+                    <div class="bg-zinc-800 p-6 rounded-lg text-center hover:bg-zinc-700 transition-colors">
+                        <div class="text-3xl mb-3 text-emerald-400">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3 class="font-medium text-white">Proxmox</h3>
+                    </div>
+                    
+                    <!-- Skill 4 -->
+                    <div class="bg-zinc-800 p-6 rounded-lg text-center hover:bg-zinc-700 transition-colors">
+                        <div class="text-3xl mb-3 text-emerald-400">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h3 class="font-medium text-white">Networking</h3>
+                    </div>
+                </div>
+            </div>
         </div>
-    </footer>
-    
+    </section>
+
+    <!-- About Section -->
+    <section class="py-16 bg-zinc-900">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-2xl md:text-3xl font-bold text-white mb-6 text-center">About Me</h2>
+                <div class="bg-zinc-800 rounded-lg p-8">
+                    <p class="text-zinc-300 mb-4">
+                        I'm a developer and technology enthusiast with a passion for creating clean, functional web experiences.
+                        My journey in tech has led me to explore various areas including web development, networking, and system administration.
+                    </p>
+                    <p class="text-zinc-300 mb-4">
+                        I believe in continuous learning and pushing my skills to new heights. When I'm not coding, you can find me
+                        exploring new technologies, gaming, or working on my music projects.
+                    </p>
+                    <div class="mt-6">
+                        <a href="/pages/bio/" class="text-emerald-400 hover:text-emerald-300 transition-colors">
+                            Learn more about me <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (loaded via include) -->
+    <div data-include="/includes/footer.html"></div>
+
     <!-- Scripts -->
     <script src="/assets/js/main.js"></script>
-    <script src="/assets/js/animations.js"></script>
 </body>
 </html>

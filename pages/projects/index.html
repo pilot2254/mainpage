@@ -3,126 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SilverSniper | Projects</title>
+    <title>Projects | SilverSniper</title>
     
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    
-    <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;700&family=Geist+Sans:wght@300;400;500;700&display=swap">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+    <link rel="icon" href="/favicon.ico">
     
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'geist-sans': ['Geist Sans', 'sans-serif'],
-                        'geist-mono': ['Geist Mono', 'monospace'],
-                    },
-                    colors: {
-                        silver: {
-                            '50': '#f8f9fa',
-                            '100': '#f1f3f5',
-                            '200': '#e9ecef',
-                            '300': '#dee2e6',
-                            '400': '#ced4da',
-                            '500': '#adb5bd',
-                            '600': '#868e96',
-                            '700': '#495057',
-                            '800': '#343a40',
-                            '900': '#212529',
-                        },
-                        zinc: {
-                            '50': '#fafafa',
-                            '100': '#f4f4f5',
-                            '200': '#e4e4e7',
-                            '300': '#d4d4d8',
-                            '400': '#a1a1aa',
-                            '500': '#71717a',
-                            '600': '#52525b',
-                            '700': '#3f3f46',
-                            '800': '#27272a',
-                            '900': '#18181b',
-                            '950': '#09090b',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/assets/css/custom.css">
     
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/76661d0faf.js" crossorigin="anonymous"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    
+    <!-- Include System -->
+    <script src="/assets/js/includes.js"></script>
 </head>
-<body class="bg-black text-white font-geist-sans min-h-screen flex flex-col">
-    <!-- Background Effects -->
-    <div id="moon" class="fixed w-24 h-24 rounded-full bg-white/90 shadow-[0_0_30px_20px_rgba(255,255,255,0.7)] pointer-events-none z-0"></div>
-    
-    <!-- Header -->
-    <header class="relative z-10">
-        <nav class="container mx-auto px-4 py-6">
-            <div class="flex justify-end md:justify-end items-center">
-                <ul class="flex flex-wrap justify-center md:justify-end gap-4 md:gap-8 items-center">
-                    <li class="nav-item">
-                        <a href="/index.html" class="text-white hover:text-silver-400 text-lg md:text-xl font-medium relative nav-link">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/pages/projects/index.html" class="text-white hover:text-silver-400 text-lg md:text-xl font-medium relative nav-link active">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/pages/skills/index.html" class="text-white hover:text-silver-400 text-lg md:text-xl font-medium relative nav-link">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/pages/bio/index.html" class="text-white hover:text-silver-400 text-lg md:text-xl font-medium relative nav-link">Bio</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-    
-    <!-- Main Content -->
-    <main class="flex-grow container mx-auto px-4 py-8 relative z-10">
-        <div class="flex flex-col items-center justify-center mb-12">
-            <div class="relative">
-                <h1 class="text-4xl md:text-6xl font-bold text-silver-400 text-center mb-8 main-title">Projects</h1>
+<body class="bg-zinc-950 text-zinc-100 font-sans antialiased">
+    <!-- Header (loaded via include) -->
+    <div data-include="/includes/header.html"></div>
+
+    <!-- Page Header -->
+    <section class="py-16 bg-zinc-900">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">My Projects</h1>
+                <p class="text-zinc-400">A collection of web development and design projects I've worked on.</p>
             </div>
         </div>
-        
-        <!-- Projects Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            <!-- Project items will be dynamically generated here -->
-        </div>
-        
-        <!-- Disclaimer Modal -->
-        <div id="disclaimer-modal" class="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
-            <div class="bg-zinc-900 border border-zinc-700 p-6 rounded-lg max-w-md mx-4">
-                <h3 class="text-xl font-bold text-silver-400 mb-4">Disclaimer</h3>
-                <p class="text-white mb-6">
-                    This is a disclaimer. I DONT CARE what you will see, I am not responsible for anything you're about to see. 
-                    Please be understanding, I was a teen when I was creating some of these pages. 
-                    I hope you'll appreciate my work so far.
-                </p>
-                <button id="disclaimer-ok" class="px-4 py-2 bg-zinc-800 hover:bg-zinc-700 text-white rounded transition-colors">
-                    OK
-                </button>
+    </section>
+
+    <!-- Filter Controls -->
+    <section class="py-8 border-b border-zinc-800">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex flex-wrap gap-4 justify-center">
+                    <button class="filter-btn active px-4 py-2 rounded-md bg-emerald-600 text-white" data-filter="all">All Projects</button>
+                    <button class="filter-btn px-4 py-2 rounded-md bg-zinc-800 text-zinc-300 hover:bg-zinc-700" data-filter="web">Web Design</button>
+                    <button class="filter-btn px-4 py-2 rounded-md bg-zinc-800 text-zinc-300 hover:bg-zinc-700" data-filter="main">Main Pages</button>
+                    <button class="filter-btn px-4 py-2 rounded-md bg-zinc-800 text-zinc-300 hover:bg-zinc-700" data-filter="other">Other</button>
+                </div>
             </div>
         </div>
-    </main>
-    
-    <!-- Footer -->
-    <footer class="relative z-10 py-4 px-4">
-        <div class="container mx-auto">
-            <p class="text-silver-400 text-sm text-right">© SilverSniper | 2021-2025</p>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Projects will be dynamically inserted here -->
+                </div>
+            </div>
         </div>
-    </footer>
-    
+    </section>
+
+    <!-- Footer (loaded via include) -->
+    <div data-include="/includes/footer.html"></div>
+
     <!-- Scripts -->
     <script src="/assets/js/main.js"></script>
     <script src="/assets/js/projects.js"></script>

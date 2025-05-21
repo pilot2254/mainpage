@@ -1,0 +1,35 @@
+<header class="sticky top-0 z-50 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800">
+    <div class="container mx-auto px-4 py-4">
+        <div class="flex justify-between items-center">
+            <a href="/" class="text-xl font-bold text-white flex items-center gap-2">
+                <span class="text-emerald-400"><i class="fas fa-code"></i></span>
+                SilverSniper
+            </a>
+            
+            <nav class="hidden md:block">
+                <ul class="flex gap-8">
+                    <li><a href="/" class="nav-link" data-page="home">Home</a></li>
+                    <li><a href="/pages/projects/" class="nav-link" data-page="projects">Projects</a></li>
+                    <li><a href="/pages/skills/" class="nav-link" data-page="skills">Skills</a></li>
+                    <li><a href="/pages/bio/" class="nav-link" data-page="bio">About</a></li>
+                </ul>
+            </nav>
+            
+            <button id="mobile-menu-button" class="md:hidden text-zinc-400 hover:text-white">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-zinc-900 border-b border-zinc-800">
+        <nav class="container mx-auto px-4 py-4">
+            <ul class="flex flex-col gap-4">
+                <li><a href="/" class="block py-2 nav-link" data-page="home">Home</a></li>
+                <li><a href="/pages/projects/" class="block py-2 nav-link" data-page="projects">Projects</a></li>
+                <li><a href="/pages/skills/" class="block py-2 nav-link" data-page="skills">Skills</a></li>
+                <li><a href="/pages/bio/" class="block py-2 nav-link" data-page="bio">About</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
