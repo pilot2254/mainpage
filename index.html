@@ -3,77 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | MainPageV5</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="global-settings.css">
-        <meta property="og:title" content="SilverSniper's Main Page v5">
-        <meta property="og:description" content="I decided to make a new one.">
-        <meta property="og:image" content="https://silversnipers.com/assets/cs.jpg">
-        <meta property="og:image:width" content="500">
-        <meta property="og:image:height" content="500">
-        <meta property="og:url" content="https://silversnipers.com/">
-        <meta property="og:type" content="Any">
-        <meta property="og:site_name" content="SS's MPV5">
-        <meta property="og:locale" content="en_US">
-        <meta name="author" content="SilverSniper Obviously">
-        <meta property="article:published_time" content="2025-01-17T19:00:00+00:00">
-        <meta name="date" content="2025-01-17T19:00:00+00:00" scheme="YYYY-MM-DDTHH:MM:SS+00:00">
-    <link rel="shortcut icon" href="./android-chrome-192x192.png" type="image/x-icon">
-    <link rel="shortcut icon" href="./android-chrome-512x512.png" type="image/x-icon">
-    <link rel="shortcut icon" href="./apple-touch-icon.png" type="image/x-icon">
-    <link rel="shortcut icon" href="./favicon-16x16.png" type="image/x-icon">
-    <link rel="shortcut icon" href="./favicon-32x32.png" type="image/x-icon">
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <title>SilverSniper | Home</title>
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;700&family=Geist+Sans:wght@300;400;500;700&display=swap">
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'geist-sans': ['Geist Sans', 'sans-serif'],
+                        'geist-mono': ['Geist Mono', 'monospace'],
+                    },
+                    colors: {
+                        silver: {
+                            '50': '#f8f9fa',
+                            '100': '#f1f3f5',
+                            '200': '#e9ecef',
+                            '300': '#dee2e6',
+                            '400': '#ced4da',
+                            '500': '#adb5bd',
+                            '600': '#868e96',
+                            '700': '#495057',
+                            '800': '#343a40',
+                            '900': '#212529',
+                        },
+                        zinc: {
+                            '50': '#fafafa',
+                            '100': '#f4f4f5',
+                            '200': '#e4e4e7',
+                            '300': '#d4d4d8',
+                            '400': '#a1a1aa',
+                            '500': '#71717a',
+                            '600': '#52525b',
+                            '700': '#3f3f46',
+                            '800': '#27272a',
+                            '900': '#18181b',
+                            '950': '#09090b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/custom.css">
+    
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/76661d0faf.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <div id="rain"></div>
-    <div class="container">
-        <div class="moon"></div>
-      </div>
-    <nav>
-        <div class="nav-items">
-            <li></li>
-            <li><a id="home" href="./index.html">Home</a></li>
-            <li></li>
-            <li><a id="projects" href="./pages/projects/index.html">Projects</a></li>
-            <li></li>
-            <li><a id="skills" href="./pages/skills/index.html">Skills</a></li>
-            <li></li>
-            <li><a id="bio" href="./pages/bio/index.html">Bio</a></li>
-            <li></li>
+<body class="bg-black text-white font-geist-sans min-h-screen flex flex-col">
+    <!-- Rain Container -->
+    <div id="rain-container" class="fixed inset-0 pointer-events-none z-0 overflow-hidden"></div>
+    
+    <!-- Header -->
+    <header class="relative z-10">
+        <nav class="container mx-auto px-4 py-6">
+            <div class="flex justify-end md:justify-end items-center">
+                <ul class="flex flex-wrap justify-center md:justify-end gap-4 md:gap-8 items-center">
+                    <li class="nav-item">
+                        <a href="/index.html" class="text-white hover:text-silver-400 text-lg md:text-xl font-medium relative nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/pages/projects/index.html" class="text-white hover:text-silver-400 text-lg md:text-xl font-medium relative nav-link">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/pages/skills/index.html" class="text-white hover:text-silver-400 text-lg md:text-xl font-medium relative nav-link">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/pages/bio/index.html" class="text-white hover:text-silver-400 text-lg md:text-xl font-medium relative nav-link">Bio</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto px-4 py-8 relative z-10">
+        <div class="flex flex-col items-center justify-center h-[50vh]">
+            <div class="relative">
+                <h1 class="text-4xl md:text-6xl font-bold text-silver-400 text-center mb-8 main-title">
+                    I AM <br> SilverSniper
+                </h1>
+            </div>
         </div>
-        <div class="wg"></div>
-    </nav>
-    <div class="divider">LOADED</div>
-    <div class="content1">
-        <div class="d1">
-        <h1>SilverSniper</h1>
-        </div>
-    </div>
-<div class="master">
-    <div class="content2">
-        <div class="wg1"></div>
-        <div class="divider1">LOADED</div>
-        <h1>Summary</h1>
-    </div>
-    <div class="content3">
-        <div class="wg2"></div>
-        <div class="divider2">LOADED</div>
-        <h1>I am SilverSniper</h1>
         
-    </div>
-    <div class="content4">
-        <div class="wg3"></div>
-        <div class="divider3">LOADED</div>
-        <h1>Self Taught web dev and more</h1>
-    </div>
-    <div class="content5">
-        <div class="wg4"></div>
-        <div class="divider4">LOADED</div>
-        <h1>Check bio for more</h1>
-    </div>
-</div>
-<div id="cpr">© SilverSniper | 2021-2025</div>
-    <script src="script.js"></script>
+        <!-- Terminal Container -->
+        <div class="mt-8 md:mt-16 max-w-3xl mx-auto">
+            <div id="typing-container" class="font-geist-mono text-sm md:text-base text-silver-300 whitespace-pre-line leading-relaxed p-4 border border-zinc-800 rounded-md bg-zinc-900/30 overflow-hidden"></div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="relative z-10 py-4 px-4">
+        <div class="container mx-auto">
+            <p class="text-silver-400 text-sm text-right">© SilverSniper | 2021-2025</p>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/animations.js"></script>
 </body>
 </html>
