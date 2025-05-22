@@ -52,6 +52,8 @@ Compared to your previous website, this version includes <ins>several significan
 - **Performance**: Improved loading times and overall performance
 - **Maintainability**: Easier to update and maintain with the component system
 - **Accessibility**: Better support for screen readers and keyboard navigation
+- **Typography Improvements**: Implemented Geist Sans and Geist Mono fonts throughout the site for a modern, professional look
+- **Custom Selection Highlight**: Added emerald text selection color for better user experience and brand consistency
 
 ## How to Edit Content
 
@@ -167,6 +169,10 @@ Your new website includes several SEO optimizations:
 - `/assets/js/projects.js`: Contains project data
 - `/assets/js/skills.js`: Contains skills data
 - `/assets/css/style.css`: Custom styles beyond Tailwind
+- **Typography**: 
+  - The site uses Geist Sans for general text and Geist Mono for code elements
+  - Custom text selection color in emerald for better user experience
+  - A comprehensive font fallback system ensures text is always readable
 
 ### Technologies Used
 - **HTML5**: For structure and content
